@@ -1,2 +1,4 @@
 #!/usr/bin/node
-import userName from '../index.js';
+import userName from '../index';
+
+console.log(`Hi ${userName}!`);
