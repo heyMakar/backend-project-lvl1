@@ -1,8 +1,5 @@
 #!/usr/bin/node
-import { brainEven, welcome } from '../index';
+import gameCore from '../core';
+import { textRule, random as question, isEven as result } from '../games/braineven';
 
-const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
-
-welcome(rule);
-
-brainEven();
+gameCore(textRule, question, result);
