@@ -9,10 +9,9 @@ const gameCore = (textRules, func, correctAnswer) => {
     const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
     const checkAnswer = userAnswer === String(correctAnswer(question));
     const log = `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer(question)}'.\nLet's try again, ${userName}!`;
-    if (checkAnswer) {
-      console.log('Correct!');
-    } else if (userAnswer === '') return;
-    else return console.log(log);
+    if (userAnswer === '') return '';
+    if (checkAnswer) console.log('Correct!');
+    if (!checkAnswer) return console.log(log);
   }
   return console.log(`Congratulations, ${userName}!`);
 };
