@@ -4,3 +4,5 @@
 [![Build Status](https://travis-ci.org/heyMakar/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/heyMakar/frontend-project-lvl1)
 
 [![asciicast](https://asciinema.org/a/fiQ99AVUc4BkwypjC1Oc7Koft.svg)](https://asciinema.org/a/fiQ99AVUc4BkwypjC1Oc7Koft)
+
+[![asciicast](https://asciinema.org/a/PqlwFiuynN95dEMYCXsFCkecu.svg)](https://asciinema.org/a/PqlwFiuynN95dEMYCXsFCkecu)
