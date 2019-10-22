@@ -1,8 +1,8 @@
 {
-  "name": "braingames",
+  "name": "heymakarbraingames",
   "version": "1.0.0",
   "description": "Brain Games",
-  "main": "index.js",
+  "main": "core.js",
   "bin": {
     "brain-calc": "dist/bin/brain-calc.js",
     "brain-even": "dist/bin/brain-even.js",
@@ -10,6 +10,9 @@
     "brain-progression": "dist/bin/brain-progression.js",
     "brain-prime": "dist/bin/brain-prime.js"
   },
+  "keywords": [
+    "braingames hexlet"
+  ],
   "files": [
     "dist"
   ],
