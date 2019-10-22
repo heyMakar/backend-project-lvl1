@@ -3,6 +3,4 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/5e5191fea1d8c1d09713/test_coverage)](https://codeclimate.com/github/heyMakar/frontend-project-lvl1/test_coverage)
 [![Build Status](https://travis-ci.org/heyMakar/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/heyMakar/frontend-project-lvl1)
 
-[![asciicast](https://asciinema.org/a/fiQ99AVUc4BkwypjC1Oc7Koft.svg)](https://asciinema.org/a/fiQ99AVUc4BkwypjC1Oc7Koft)
-
-[![asciicast](https://asciinema.org/a/PqlwFiuynN95dEMYCXsFCkecu.svg)](https://asciinema.org/a/PqlwFiuynN95dEMYCXsFCkecu)
+[![asciicast](https://asciinema.org/a/mZmvie0dJCgy2nVgU4714bBXI.svg)](https://asciinema.org/a/mZmvie0dJCgy2nVgU4714bBXI)
