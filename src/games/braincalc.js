@@ -1,7 +1,7 @@
 export const textRule = 'What is the result of the expression?';
 
 
-const getOperator = () => {
+const getRandomOperator = () => {
   const random = Math.random();
   if (random < 0.33) {
     return '+';
@@ -13,14 +13,20 @@ const getOperator = () => {
 };
 
 
-export const random = () => {
+export const randomExpression = () => {
   const min = 1;
   const max = 100;
   const digit1 = Math.floor(Math.random() * (max - min + 1)) + min;
   const digit2 = Math.floor(Math.random() * (max - min + 1)) + min;
-  const operator = getOperator();
-  const expression = `${digit1} ${operator} ${digit2}`;
-  return expression;
+  const operator = getRandomOperator();
+  const question = (arg1, arg2, action) => `${arg1} ${action} ${arg2}`;
+  const result = (arg1, arg2, action) => {
+    if (action === '+') return arg1 + arg2;
+    if (action === '-') return arg1 - arg2;
+    return arg1 * arg2;
+  };
+  return (variants) => {
+    if (variants === 'result') return result(digit1, digit2, operator);
+    return question(digit1, digit2, operator);
+  };
 };
-
-export const resultOfStringExpression = (string) => eval(string);
