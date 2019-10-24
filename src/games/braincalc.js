@@ -1,5 +1,6 @@
-export const textRule = 'What is the result of the expression?';
+import gameCore from '../core';
 
+const textRule = 'What is the result of the expression?';
 
 const getRandomOperator = () => {
   const random = Math.random();
@@ -12,8 +13,7 @@ const getRandomOperator = () => {
   return '*';
 };
 
-
-export const randomExpression = () => {
+const randomExpression = () => {
   const min = 1;
   const max = 100;
   const digit1 = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -30,3 +30,7 @@ export const randomExpression = () => {
     return question(digit1, digit2, operator);
   };
 };
+
+const calcGame = () => gameCore(textRule, randomExpression);
+
+export default calcGame;

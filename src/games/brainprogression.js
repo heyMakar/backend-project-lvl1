@@ -1,6 +1,8 @@
-export const textRule = 'What number is missing in the progression?';
+import gameCore from '../core';
 
-export const randomProgression = () => {
+const textRule = 'What number is missing in the progression?';
+
+const randomProgression = () => {
   const min = 1;
   const max = 90;
   const step = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -21,3 +23,7 @@ export const randomProgression = () => {
     return question();
   };
 };
+
+const progressionGame = () => gameCore(textRule, randomProgression);
+
+export default progressionGame;

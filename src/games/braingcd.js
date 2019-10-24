@@ -1,7 +1,8 @@
-export const textRule = 'Find the greatest common divisor of given numbers.';
+import gameCore from '../core';
 
+const textRule = 'Find the greatest common divisor of given numbers.';
 
-export const randomRangeWithGcd = () => {
+const randomRangeWithGcd = () => {
   const min = 2;
   const max = 100;
   const digit1 = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -13,3 +14,7 @@ export const randomRangeWithGcd = () => {
     return question(digit1, digit2);
   };
 };
+
+const gcdGame = () => gameCore(textRule, randomRangeWithGcd);
+
+export default gcdGame;

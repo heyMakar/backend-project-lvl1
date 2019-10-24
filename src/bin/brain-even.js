@@ -1,5 +1,4 @@
-#!/usr/bin/node
-import gameCore from '../core';
-import { textRule, randomRangeNumbers as question } from '../games/braineven';
+#!/usr/bin/env node
+import game from '../games/braineven';
 
-gameCore(textRule, question);
+game();

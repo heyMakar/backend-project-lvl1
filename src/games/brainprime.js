@@ -1,6 +1,8 @@
-export const textRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+import gameCore from '../core';
 
-export const randomNumber = () => {
+const textRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const randomNumber = () => {
   const min = 1;
   const max = 100;
   const random = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -22,3 +24,7 @@ export const randomNumber = () => {
     return question(random);
   };
 };
+
+const primeGame = () => gameCore(textRule, randomNumber);
+
+export default primeGame;

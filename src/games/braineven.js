@@ -1,6 +1,8 @@
-export const textRule = 'Answer "yes" if the number is even, otherwise answer "no".';
+import gameCore from '../core';
 
-export const randomRangeNumbers = () => {
+const textRule = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const randomRangeNumbers = () => {
   const min = 1;
   const max = 100;
   const number = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -16,3 +18,7 @@ export const randomRangeNumbers = () => {
     return question(number);
   };
 };
+
+const evenGame = () => gameCore(textRule, randomRangeNumbers);
+
+export default evenGame;

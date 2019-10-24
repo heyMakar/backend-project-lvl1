@@ -1,5 +1,4 @@
-#!/usr/bin/node
-import gameCore from '../core';
-import { textRule, randomNumber as question } from '../games/brainprime';
+#!/usr/bin/env node
+import game from '../games/brainprime';
 
-gameCore(textRule, question);
+game();
