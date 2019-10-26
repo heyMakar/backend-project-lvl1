@@ -2,7 +2,7 @@ import questionAndResult from '../question';
 import gameCore from '../core';
 import generator from '../numgenerator';
 
-const textRule = 'Answer "yes" if the number is even, otherwise answer "no".';
+const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (number) => number % 2 === 0;
 
@@ -12,6 +12,6 @@ const gameQuestionAndResult = () => {
   return questionAndResult(question, result);
 };
 
-const evenGame = () => gameCore(textRule, gameQuestionAndResult);
+const evenGame = () => gameCore(gameRule, gameQuestionAndResult);
 
 export default evenGame;

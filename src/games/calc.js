@@ -2,7 +2,7 @@ import questionAndResult from '../question';
 import gameCore from '../core';
 import generator from '../numgenerator';
 
-const textRule = 'What is the result of the expression?';
+const gameRule = 'What is the result of the expression?';
 
 
 const getRandomOperator = () => {
@@ -36,6 +36,6 @@ const gameQuestionAndResult = () => {
   return questionAndResult(question, result);
 };
 
-const calcGame = () => gameCore(textRule, gameQuestionAndResult);
+const calcGame = () => gameCore(gameRule, gameQuestionAndResult);
 
 export default calcGame;

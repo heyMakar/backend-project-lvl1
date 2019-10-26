@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from '@hexlet/pairs';
 
-const gameCore = (textRules, question) => {
-  const userName = readlineSync.question(`Welcome to the Brain Games!\n${textRules}\n\nMay i have your name?`);
+const gameCore = (gameRules, question) => {
+  const userName = readlineSync.question(`Welcome to the Brain Games!\n${gameRules}\n\nMay i have your name?`);
   console.log(`Hello, ${userName}!`);
   for (let askCount = 0; askCount < 3; askCount += 1) {
     const pairQuestionResult = question();
