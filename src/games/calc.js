@@ -20,8 +20,9 @@ const resultOfExpression = (arg1, arg2, operator) => {
     case '-':
       result = arg1 - arg2;
       break;
-    default:
+    case '*':
       result = arg1 * arg2;
+      default: false
   }
   return result;
 };
