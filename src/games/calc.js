@@ -21,7 +21,8 @@ const resultOfExpression = (arg1, arg2, operator) => {
       break;
     case '*':
       result = arg1 * arg2;
-      default: false
+      break;
+    default: return false;
   }
   return result;
 };
