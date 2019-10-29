@@ -1,16 +1,16 @@
-import questionAndResult from '../question';
+import createQuestionAndResult from '../questionbuilder';
 import gameCore from '../core';
-import generator from '../numgenerator';
+import getRandomNumber from '../numgenerator';
 
 const gameRule = 'What is the result of the expression?';
 const operators = '+-*';
 
-const getRandomOperator = (ops) => {
-  const index = Math.floor(Math.random() * ops.length);
-  return ops[index];
+const getRandomOperator = (operatorsString) => {
+  const index = Math.floor(Math.random() * operatorsString.length);
+  return operatorsString[index];
 };
 
-const resultOfExpression = (arg1, arg2, operator) => {
+const getResultOfExpression = (arg1, arg2, operator) => {
   let result;
   switch (operator) {
     case '+':
@@ -28,15 +28,15 @@ const resultOfExpression = (arg1, arg2, operator) => {
 };
 
 
-const gameQuestionAndResult = () => {
-  const randomDigit1 = generator();
-  const randomDigit2 = generator();
-  const operator = getRandomOperator(operators);
-  const question = `${randomDigit1} ${operator} ${randomDigit2}`;
-  const result = resultOfExpression(randomDigit1, randomDigit2, operator);
-  return questionAndResult(question, result);
+const getGameQuestionAndResult = () => {
+  const randomDigit1 = getRandomNumber();
+  const randomDigit2 = getRandomNumber();
+  const randomOperator = getRandomOperator(operators);
+  const questionWithExpression = `${randomDigit1} ${randomOperator} ${randomDigit2}`;
+  const result = getResultOfExpression(randomDigit1, randomDigit2, randomOperator);
+  return createQuestionAndResult(questionWithExpression, result);
 };
 
-const calcGame = () => gameCore(gameRule, gameQuestionAndResult);
+const calcGame = () => gameCore(gameRule, getGameQuestionAndResult);
 
 export default calcGame;

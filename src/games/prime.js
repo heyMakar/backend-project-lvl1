@@ -1,6 +1,6 @@
-import questionAndResult from '../question';
+import createQuestionAndResult from '../questionbuilder';
 import gameCore from '../core';
-import generator from '../numgenerator';
+import getRandomNumber from '../numgenerator';
 
 const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -16,12 +16,12 @@ const isPrime = (number) => {
   return true;
 };
 
-const gameQuestionAndResult = () => {
-  const question = generator();
-  const result = isPrime(question) ? 'yes' : 'no';
-  return questionAndResult(question, result);
+const getGameQuestionAndResult = () => {
+  const randomNumber = getRandomNumber();
+  const result = isPrime(randomNumber) ? 'yes' : 'no';
+  return createQuestionAndResult(randomNumber, result);
 };
 
-const primeGame = () => gameCore(gameRule, gameQuestionAndResult);
+const primeGame = () => gameCore(gameRule, getGameQuestionAndResult);
 
 export default primeGame;

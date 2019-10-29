@@ -9,11 +9,11 @@ const gameCore = (gameRules, question) => {
     const questionForUser = car(pairQuestionResult);
     const correctAnswer = cdr(pairQuestionResult);
     const userAnswer = readlineSync.question(`Question: ${questionForUser}\nYour answer: `);
-    const checkAnswer = userAnswer === String(correctAnswer);
-    const log = `'${userAnswer}' is wrong answer. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
+    const checkAnswer = userAnswer === correctAnswer;
+    const logForWrongAnswer = `'${userAnswer}' is wrong answer. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
     if (userAnswer === '') return '';
     if (checkAnswer) console.log('Correct!');
-    if (!checkAnswer) return console.log(log);
+    if (!checkAnswer) return console.log(logForWrongAnswer);
   }
   return console.log(`Congratulations, ${userName}!`);
 };

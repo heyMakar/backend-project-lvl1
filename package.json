@@ -2,7 +2,6 @@
   "name": "heymakarbraingames",
   "version": "1.0.0",
   "description": "Brain Games",
-  "main": "core.js",
   "bin": {
     "brain-calc": "dist/bin/brain-calc.js",
     "brain-even": "dist/bin/brain-even.js",

@@ -1,17 +1,17 @@
-import questionAndResult from '../question';
+import createQuestionAndResult from '../questionbuilder';
 import gameCore from '../core';
-import generator from '../numgenerator';
+import getRandomNumber from '../numgenerator';
 
 const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (number) => number % 2 === 0;
 
-const gameQuestionAndResult = () => {
-  const question = generator();
-  const result = isEven(question) ? 'yes' : 'no';
-  return questionAndResult(question, result);
+const getGameQuestionAndResult = () => {
+  const randomNumber = getRandomNumber();
+  const result = isEven(randomNumber) ? 'yes' : 'no';
+  return createQuestionAndResult(randomNumber, result);
 };
 
-const evenGame = () => gameCore(gameRule, gameQuestionAndResult);
+const evenGame = () => gameCore(gameRule, getGameQuestionAndResult);
 
 export default evenGame;

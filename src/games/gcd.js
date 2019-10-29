@@ -1,19 +1,19 @@
-import questionAndResult from '../question';
+import createQuestionAndResult from '../questionbuilder';
 import gameCore from '../core';
-import generator from '../numgenerator';
+import getRandomNumber from '../numgenerator';
 
 const gameRule = 'Find the greatest common divisor of given numbers.';
 
 const gcdResult = (x, y) => (x ? gcdResult(y % x, x) : y);
 
-const gameQuestionAndResult = () => {
-  const randomDigit1 = generator();
-  const randomDigit2 = generator();
-  const question = `${randomDigit1} ${randomDigit2}`;
+const getGameQuestionAndResult = () => {
+  const randomDigit1 = getRandomNumber();
+  const randomDigit2 = getRandomNumber();
+  const questionWithTwoNumbersForGcd = `${randomDigit1} ${randomDigit2}`;
   const result = gcdResult(randomDigit1, randomDigit2);
-  return questionAndResult(question, result);
+  return createQuestionAndResult(questionWithTwoNumbersForGcd, result);
 };
 
-const gcdGame = () => gameCore(gameRule, gameQuestionAndResult);
+const gcdGame = () => gameCore(gameRule, getGameQuestionAndResult);
 
 export default gcdGame;
