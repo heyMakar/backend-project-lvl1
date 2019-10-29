@@ -19,7 +19,7 @@ const isPrime = (number) => {
 const getGameQuestionAndResult = () => {
   const randomNumber = getRandomNumber();
   const result = isPrime(randomNumber) ? 'yes' : 'no';
-  return cons(randomNumber, String(result));
+  return cons(randomNumber, result);
 };
 
 const primeGame = () => gameCore(gameRule, getGameQuestionAndResult);

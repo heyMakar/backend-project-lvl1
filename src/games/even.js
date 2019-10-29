@@ -9,7 +9,7 @@ const isEven = (number) => number % 2 === 0;
 const getGameQuestionAndResult = () => {
   const randomNumber = getRandomNumber();
   const result = isEven(randomNumber) ? 'yes' : 'no';
-  return cons(randomNumber, String(result));
+  return cons(randomNumber, result);
 };
 
 const evenGame = () => gameCore(gameRule, getGameQuestionAndResult);
