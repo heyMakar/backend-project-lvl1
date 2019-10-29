@@ -1,4 +1,4 @@
-import createQuestionAndResult from '../questionbuilder';
+import { cons } from '@hexlet/pairs';
 import gameCore from '../core';
 import getRandomNumber from '../numgenerator';
 
@@ -34,7 +34,7 @@ const getGameQuestionAndResult = () => {
   const randomOperator = getRandomOperator(operators);
   const questionWithExpression = `${randomDigit1} ${randomOperator} ${randomDigit2}`;
   const result = getResultOfExpression(randomDigit1, randomDigit2, randomOperator);
-  return createQuestionAndResult(questionWithExpression, result);
+  return cons(questionWithExpression, String(result));
 };
 
 const calcGame = () => gameCore(gameRule, getGameQuestionAndResult);

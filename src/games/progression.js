@@ -1,4 +1,4 @@
-import createQuestionAndResult from '../questionbuilder';
+import { cons } from '@hexlet/pairs';
 import gameCore from '../core';
 import getRandomNumber from '../numgenerator';
 
@@ -19,7 +19,7 @@ const getGameQuestionAndResult = () => {
     return result;
   };
   const result = hiddenIndexPlaceGenerator * progressionIntervalInQuestion;
-  return createQuestionAndResult(getQuestionWithHiddenIndex(), result);
+  return cons(getQuestionWithHiddenIndex(), String(result));
 };
 
 const progressionGame = () => gameCore(gameRule, getGameQuestionAndResult);

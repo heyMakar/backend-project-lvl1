@@ -1,4 +1,4 @@
-import createQuestionAndResult from '../questionbuilder';
+import { cons } from '@hexlet/pairs';
 import gameCore from '../core';
 import getRandomNumber from '../numgenerator';
 
@@ -9,7 +9,7 @@ const isEven = (number) => number % 2 === 0;
 const getGameQuestionAndResult = () => {
   const randomNumber = getRandomNumber();
   const result = isEven(randomNumber) ? 'yes' : 'no';
-  return createQuestionAndResult(randomNumber, result);
+  return cons(randomNumber, String(result));
 };
 
 const evenGame = () => gameCore(gameRule, getGameQuestionAndResult);

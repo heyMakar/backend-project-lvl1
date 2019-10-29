@@ -1,4 +1,4 @@
-import createQuestionAndResult from '../questionbuilder';
+import { cons } from '@hexlet/pairs';
 import gameCore from '../core';
 import getRandomNumber from '../numgenerator';
 
@@ -11,7 +11,7 @@ const getGameQuestionAndResult = () => {
   const randomDigit2 = getRandomNumber();
   const questionWithTwoNumbersForGcd = `${randomDigit1} ${randomDigit2}`;
   const result = gcdResult(randomDigit1, randomDigit2);
-  return createQuestionAndResult(questionWithTwoNumbersForGcd, result);
+  return cons(questionWithTwoNumbersForGcd, String(result));
 };
 
 const gcdGame = () => gameCore(gameRule, getGameQuestionAndResult);

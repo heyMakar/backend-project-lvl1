@@ -1,4 +1,4 @@
-import createQuestionAndResult from '../questionbuilder';
+import { cons } from '@hexlet/pairs';
 import gameCore from '../core';
 import getRandomNumber from '../numgenerator';
 
@@ -19,7 +19,7 @@ const isPrime = (number) => {
 const getGameQuestionAndResult = () => {
   const randomNumber = getRandomNumber();
   const result = isPrime(randomNumber) ? 'yes' : 'no';
-  return createQuestionAndResult(randomNumber, result);
+  return cons(randomNumber, String(result));
 };
 
 const primeGame = () => gameCore(gameRule, getGameQuestionAndResult);
