@@ -6,7 +6,7 @@ const gameRule = 'What is the result of the expression?';
 const operators = '+-*';
 
 const getRandomOperator = (operatorsString) => {
-  const index = Math.floor(Math.random() * operatorsString.length);
+  const index = getRandomNumber(0, 2);
   return operatorsString[index];
 };
 
@@ -32,9 +32,9 @@ const getGameQuestionAndResult = () => {
   const randomDigit1 = getRandomNumber();
   const randomDigit2 = getRandomNumber();
   const randomOperator = getRandomOperator(operators);
-  const questionWithExpression = `${randomDigit1} ${randomOperator} ${randomDigit2}`;
-  const result = getResultOfExpression(randomDigit1, randomDigit2, randomOperator);
-  return cons(questionWithExpression, String(result));
+  const question = `${randomDigit1} ${randomOperator} ${randomDigit2}`;
+  const answer = getResultOfExpression(randomDigit1, randomDigit2, randomOperator);
+  return cons(question, String(answer));
 };
 
 const calcGame = () => gameCore(gameRule, getGameQuestionAndResult);
