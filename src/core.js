@@ -11,15 +11,14 @@ const gameCore = (gameRules, question) => {
     const userAnswer = readlineSync.question(`Question: ${questionForUser}\nYour answer: `);
     const checkAnswer = userAnswer === correctAnswer;
     const logForWrongAnswer = `'${userAnswer}' is wrong answer. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`;
-    if (userAnswer === '') return '';
     if (checkAnswer) console.log('Correct!');
-    if (!checkAnswer) {
+    else if (userAnswer === '') return;
+    else {
       console.log(logForWrongAnswer);
-      return '';
+      return;
     }
   }
   console.log(`Congratulations, ${userName}!`);
-  return '';
 };
 
 export default gameCore;
