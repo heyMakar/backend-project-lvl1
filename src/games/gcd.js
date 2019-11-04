@@ -14,6 +14,4 @@ const getGameQuestionAndResult = () => {
   return cons(question, String(answer));
 };
 
-const gcdGame = () => gameCore(gameRule, getGameQuestionAndResult);
-
-export default gcdGame;
+export default () => gameCore(gameRule, getGameQuestionAndResult);

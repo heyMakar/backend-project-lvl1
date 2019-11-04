@@ -22,6 +22,4 @@ const getGameQuestionAndResult = () => {
   return cons(question, answer);
 };
 
-const primeGame = () => gameCore(gameRule, getGameQuestionAndResult);
-
-export default primeGame;
+export default () => gameCore(gameRule, getGameQuestionAndResult);

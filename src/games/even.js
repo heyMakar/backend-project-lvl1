@@ -12,6 +12,4 @@ const getGameQuestionAndResult = () => {
   return cons(question, answer);
 };
 
-const evenGame = () => gameCore(gameRule, getGameQuestionAndResult);
-
-export default evenGame;
+export default () => gameCore(gameRule, getGameQuestionAndResult);

@@ -37,6 +37,4 @@ const getGameQuestionAndResult = () => {
   return cons(question, String(answer));
 };
 
-const calcGame = () => gameCore(gameRule, getGameQuestionAndResult);
-
-export default calcGame;
+export default () => gameCore(gameRule, getGameQuestionAndResult);
