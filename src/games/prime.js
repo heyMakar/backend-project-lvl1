@@ -18,8 +18,8 @@ const isPrime = (number) => {
 
 const getGameQuestionAndResult = () => {
   const question = getRandomNumber();
-  const answer = isPrime(question) ? 'yes' : 'no';
-  return cons(question, answer);
+  const result = isPrime(question) ? 'yes' : 'no';
+  return cons(question, result);
 };
 
 export default () => gameCore(gameRule, getGameQuestionAndResult);

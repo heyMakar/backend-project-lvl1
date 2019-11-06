@@ -5,9 +5,9 @@ import getRandomNumber from '../numgenerator';
 const gameRule = 'What is the result of the expression?';
 const operators = '+-*';
 
-const getRandomOperator = (operatorsString) => {
-  const index = getRandomNumber(0, 2);
-  return operatorsString[index];
+const getRandomOperator = (string) => {
+  const index = getRandomNumber(0, operators.length);
+  return string[index];
 };
 
 const getResultOfExpression = (arg1, arg2, operator) => {
@@ -33,8 +33,8 @@ const getGameQuestionAndResult = () => {
   const randomDigit2 = getRandomNumber();
   const randomOperator = getRandomOperator(operators);
   const question = `${randomDigit1} ${randomOperator} ${randomDigit2}`;
-  const answer = getResultOfExpression(randomDigit1, randomDigit2, randomOperator);
-  return cons(question, String(answer));
+  const result = getResultOfExpression(randomDigit1, randomDigit2, randomOperator);
+  return cons(question, String(result));
 };
 
 export default () => gameCore(gameRule, getGameQuestionAndResult);
