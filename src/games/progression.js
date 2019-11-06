@@ -5,24 +5,22 @@ import getRandomNumber from '../numgenerator';
 const gameRule = 'What number is missing in the progression?';
 
 const progressionLength = 10;
-const progressionStart = 0;
 
 
 const getGameQuestionAndResult = () => {
-  const progressionInterval = getRandomNumber();
-  const hiddenPlaceIndex = getRandomNumber(1, progressionLength);
-  const getQuestionWithHiddenIndex = () => {
+  const start = getRandomNumber();
+  const step = getRandomNumber();
+  const hiddenPlaceIndex = getRandomNumber(0, progressionLength - 1);
+  const getQuestion = () => {
     let result = '';
-    for (let i = 1; i <= progressionLength; i += 1) {
-      const step = progressionStart + progressionInterval * i;
-      const hiddenIndex = i === hiddenPlaceIndex;
-      result = hiddenIndex ? `${result}... ` : `${result}${step} `;
+    for (let i = 0; i < progressionLength; i += 1) {
+      result = i === hiddenPlaceIndex ? `${result} ...` : `${result} ${start + step * i}`;
     }
-    return result;
+    return result.trim();
   };
-  const answer = hiddenPlaceIndex * progressionInterval + progressionStart;
-  const question = getQuestionWithHiddenIndex();
-  return cons(question, String(answer));
+  const result = hiddenPlaceIndex * step + start;
+  const question = getQuestion();
+  return cons(question, String(result));
 };
 
 export default () => gameCore(gameRule, getGameQuestionAndResult);
