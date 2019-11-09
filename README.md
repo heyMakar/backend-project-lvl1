@@ -8,12 +8,12 @@ This is small console games, you need give correct answers on 3 questions to win
 All games have common game engine, you can add your own game use this engine.
 Enjoy!
 
-### Setup:
+## Setup:
 
 `make install`
 
-### Games preview:
-***
+## Games preview:
+
 
 Brain-prime:
 
