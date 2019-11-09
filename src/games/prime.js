@@ -16,10 +16,10 @@ const isPrime = (number) => {
   return true;
 };
 
-const getGameQuestionAndResult = () => {
+const getGameQuestionAndAnswer = () => {
   const question = getRandomNumber();
-  const result = isPrime(question) ? 'yes' : 'no';
-  return cons(question, result);
+  const answer = isPrime(question) ? 'yes' : 'no';
+  return cons(question, answer);
 };
 
-export default () => gameCore(gameRule, getGameQuestionAndResult);
+export default () => gameCore(gameRule, getGameQuestionAndAnswer);

@@ -6,10 +6,10 @@ const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (number) => number % 2 === 0;
 
-const getGameQuestionAndResult = () => {
+const getGameQuestionAndAnswer = () => {
   const question = getRandomNumber();
-  const result = isEven(question) ? 'yes' : 'no';
-  return cons(question, result);
+  const answer = isEven(question) ? 'yes' : 'no';
+  return cons(question, answer);
 };
 
-export default () => gameCore(gameRule, getGameQuestionAndResult);
+export default () => gameCore(gameRule, getGameQuestionAndAnswer);

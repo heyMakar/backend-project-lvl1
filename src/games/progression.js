@@ -6,21 +6,23 @@ const gameRule = 'What number is missing in the progression?';
 
 const progressionLength = 10;
 
-
-const getGameQuestionAndResult = () => {
-  const start = getRandomNumber();
+const progressionGenerator = (start, length) => {
+  const progression = [start];
   const step = getRandomNumber();
-  const hiddenPlaceIndex = getRandomNumber(0, progressionLength - 1);
-  const getQuestion = () => {
-    let result = '';
-    for (let i = 0; i < progressionLength; i += 1) {
-      result = i === hiddenPlaceIndex ? `${result} ...` : `${result} ${start + step * i}`;
-    }
-    return result.trim();
-  };
-  const result = hiddenPlaceIndex * step + start;
-  const question = getQuestion();
-  return cons(question, String(result));
+  for (let i = 1; i < length; i += 1) {
+    progression[i] = progression[i - 1] + step;
+  }
+  return progression;
 };
 
-export default () => gameCore(gameRule, getGameQuestionAndResult);
+const getGameQuestionAndAnswer = () => {
+  const start = getRandomNumber();
+  const hiddenPlaceIndex = getRandomNumber(0, progressionLength - 1);
+  const progression = progressionGenerator(start, progressionLength);
+  const answer = progression[hiddenPlaceIndex];
+  progression[hiddenPlaceIndex] = '...';
+  const question = progression.join(' ');
+  return cons(question, String(answer));
+};
+
+export default () => gameCore(gameRule, getGameQuestionAndAnswer);

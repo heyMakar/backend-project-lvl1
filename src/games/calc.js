@@ -6,7 +6,7 @@ const gameRule = 'What is the result of the expression?';
 const operators = '+-*';
 
 const getRandomOperator = (string) => {
-  const index = getRandomNumber(0, operators.length);
+  const index = getRandomNumber(0, operators.length - 1);
   return string[index];
 };
 
@@ -26,7 +26,6 @@ const getResultOfExpression = (arg1, arg2, operator) => {
   }
   return result;
 };
-
 
 const getGameQuestionAndResult = () => {
   const randomDigit1 = getRandomNumber();
