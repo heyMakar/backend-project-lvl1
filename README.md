@@ -9,7 +9,7 @@ All games have common game engine, you can add your own game use this engine.
 Enjoy!
 
 ### Setup:
----
+
 `make install`
 
 ### Games preview:
